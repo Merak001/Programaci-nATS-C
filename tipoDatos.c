@@ -2,6 +2,7 @@
 
 #include <stdio.h>
 
+
 /*  
     Todas van con %c  o  %i
     c para imprimir caracteres
@@ -35,3 +36,4 @@ int main(){
     return 0;
 }
 
+    
