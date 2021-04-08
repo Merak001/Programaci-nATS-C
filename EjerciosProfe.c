@@ -4,11 +4,11 @@
 int main()
 {
     int menuOption;
-    bool entroMenu=true;
+    
     float resultadoOperacion, v1, v2;
      do
      {
-
+        bool entroMenu=false;
         printf("Bienvenido a la caluladora de Tejeda \n");
         printf("Que es lo que decea hacer:  \n");
         printf("Sumar (1):  \n");
@@ -20,7 +20,7 @@ int main()
         scanf("%i",&menuOption);
         printf("Usted selecciono la opcion: %i \n", menuOption);
 
-        if (menuOption != 5)
+        if (menuOption != 5&& menuOption !=0 )
         {
             printf("Digite el valor 1: \n");
             scanf("\n %f", &v1);
@@ -32,28 +32,38 @@ int main()
         {
         case 1: //suma
             resultadoOperacion = v1 + v2;
+            entroMenu=true;
              break;
         case 2: //Resta
             resultadoOperacion = v1 - v2;
+            entroMenu=true;
              break;
         case 3://Multiplicación 
            resultadoOperacion = v1 * v2;
+           entroMenu=true;
             break;
         case 4: //Division
             resultadoOperacion = v1 - v2;
+            entroMenu=true;
              break;
         case 5: //Convercion Celcius
-            resultadoOperacion = v1 - v2;
-             printf("Digite el valor a converir a Farebhit \n");
-            scanf("\n %f", v1);
-             break;
+            printf("\n Digite el valor a converir a Farebhit \n");
+            scanf("\n %f", &v1);
+            printf("\n valor a coverir: %f", v1);
+            resultadoOperacion = (v1*1.8)+32;
+            entroMenu=true;
+            break;
+        case 0: //Salir
+             printf("\n Graicas por utilizar la calculadora chau! \n");
+             break;             
         default:
-            printf("NO RE CONOZCO ESA FUNCION");
+            printf("\n NO RE CONOZCO ESA FUNCION");
             entroMenu=false;            
             break;
         }
         if(entroMenu)
-        printf("\n El resultado de la operacion es : %.1f \n" , resultadoOperacion);
+        printf("\n El resultado de la operacion es : %.1f " , resultadoOperacion);
+        printf("grados Fahrenheit");
         printf("\n___________________\n");
 
      } while (menuOption != 0);
