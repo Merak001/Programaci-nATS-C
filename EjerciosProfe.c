@@ -19,11 +19,13 @@ int main()
         printf("Calcular hipotenusa de triangulo a partir de dos catetos (6) \n");
         printf("Calcular área de un circulo (7) \n");
         printf("Calcular área de un de trapecio (8) \n");
+        printf("Calcular media de tres numeros (9) \n");
+        printf("Restar 15'%' de una compra (10) \n");
         printf("Salir (0) \n");
         scanf("%i", &menuOption);
         printf("Usted selecciono la opcion: %i \n", menuOption);
 
-        if (menuOption != 5 && menuOption != 0 && menuOption != 6 && menuOption != 7 && menuOption != 8)
+        if (menuOption != 5 && menuOption != 0 && menuOption != 6 && menuOption != 7 && menuOption != 8 && menuOption != 10)
         {
             printf("Digite el valor 1: \n");
             scanf("\n %f", &v1);
@@ -71,8 +73,8 @@ int main()
             resultadoOperacion = 3.1416 * pow(v1, 2); // pi x radio al cuadrador
             printf("\n El el área del circulo es de: %.1f ", resultadoOperacion);
             break;
-        case 8: ;//Calcular área de trapecios   -> Se agrega punto y coma para cerrar la etiqueta y se pueda declar
-        //una nueva variable   "float altura"
+        case 8:; //Calcular área de trapecios   -> Se agrega punto y coma para cerrar la etiqueta y se pueda declar
+                 //una nueva variable   "float altura"
             float altura;
             printf("\n Digite la base mayor \n");
             scanf("\n %f", &v1);
@@ -83,7 +85,21 @@ int main()
             resultadoOperacion = ((v1 + v2) * altura) / 2; // area1 + area2 x por altura entre 2
             printf("\n El el área del trapecio es de: %.1f ", resultadoOperacion);
             break;
-            
+        case 9:; //Calcular media de tres numeros cualqes quiera
+            float v3;
+            printf("\n Digite el valor 3 \n");
+            scanf("\n %f", &v3);
+            resultadoOperacion = (v1 + v2 + v3) / 3;
+            printf("\n La media de los numeros es: %.1f ", resultadoOperacion);
+            break;
+        case 10: //Calcular el 15% de descuento de una compra
+            printf("\n Digite el monto de su compra \n");
+            scanf("\n %f", &v1);
+            resultadoOperacion = (v1 * .15);
+            resultadoOperacion = v1 - resultadoOperacion;
+            printf("\n Ud debera pagar: %.1f ", resultadoOperacion);
+            printf(" en moneda nacional");
+            break;
         case 0: //Salir
             printf("\n Graicas por utilizar la calculadora chau! \n");
             break;
